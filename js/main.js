@@ -156,22 +156,22 @@ var app=new Vue({
                         {nombre:"Yerba Mate Kalena",
                         beneficios:"Actúa como un poderoso antioxidante, estimula el sistema nervioso de forma natural, aumenta la capacidad de concentración, mejora la resistencia a la fatiga física y mental, funciona como diurético y laxante suave.",
                         detalles:"Establecimiento San Demetrio es un emprendimiento familiar que desde el año 1977 produce Yerba Mate y Té Kalena. Elaboramos artesanalmente productos agroecológicos de noble sabor y excelente calidad, certificado libre de gluten y garantizando la particularidad de no producir acidez. Además, Yerba Mate Kalena permanece en el sistema tradicional de secado Barbacuá y estacionamiento natural por 12 meses, asegurando a los consumidores el verdadero sabor del mate. Además, desde el año 2001, producimos, fraccionamos y distribuimos Azúcar Mascabo BA-LA-JU.",
-                        // foto:"/SPA VUE Sitio/imagenes/producto-1.jpg"        
+                        // foto:"/dietetica_gara/imagenes/producto-1.jpg"        
                         },
                         {nombre:"Te Inti Zen",
                         beneficios:"Cada taza de Inti Zen tiene atributos detoxificantes, relajantes, digestivas, energizante o revitalizantes. Su compromiso es crear infusiones ricas, que promuevan el bienestar y la salud.",
                         detalles:"nti Zen es un té gourmet que combina energía del nuevo continente latinoamericano a través de sus flores, frutos y especias",
-                        // foto:"/SPA VUE Sitio/imagenes/te_inti_zen.webp"    
+                        // foto:"/dietetica_gara/imagenes/te_inti_zen.webp"    
                         },
                         {nombre:"Celienergy",
                         beneficios:"Los alfajores de Celienergy son riquísimos y aptos para celíacos! NO CONTIENEN TACC, ideales para darse un gusto en cualquier momento del día",
                         detalles:"Galletita (harina de nuez, harina de arroz, almidon de maíz, azúcar, huevo, aceite de girasol, goma xántica (ESP), polvo de hornear, dulce de leche (leche entera, azúcar, glucosa, esencia vainilla, (ARO), sorbato de potasio (CONS), agar (EST), bicarbonato de sodio (AC REG), baño de reposteria fantasia blanco.",
-                        // foto:"/SPA VUE Sitio/imagenes/celienergy.jpg"    
+                        // foto:"/dietetica_gara/imagenes/celienergy.jpg"    
                         },
                         {nombre:"Leche de Almendras Pampa Vida",
                         beneficios:"Ofrece el 30 % de la cantidad de calcio diaria recomendada, reduciendo su riesgo de artritis y osteoporosis.",
                         detalles:"Bebida a base de almendras, con fuente de vitaminas A, B3, B5, B6, fortificada con calcio y vitamina B12. Libre de gluten. Perfecta para utilizar en preparaciones frías o calientes. Lista para compartir.",
-                        // foto:"/SPA VUE Sitio/imagenes/leche.jpg"    
+                        // foto:"/dietetica_gara/imagenes/leche.jpg"    
                         }
                     ],           
                 }

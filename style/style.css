@@ -183,9 +183,6 @@ display: none;
     position: fixed;
     transition: all .4s;
   }
-  .nav{
-    
-  }
   .menu{
     position: fixed;
     width: 100vw;
