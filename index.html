@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <script src="https://kit.fontawesome.com/e15e8c34af.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    
+    <title>Dietetica Gara</title>
+
+    <!-- icono de arriba -->
+
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="/SPA VUE Sitio/icono/icono_dietetica/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/SPA VUE Sitio/icono/icono_dietetica/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/SPA VUE Sitio/icono/icono_dietetica/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/SPA VUE Sitio/icono/icono_dietetica/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="60x60" href="/SPA VUE Sitio/icono/icono_dietetica/apple-touch-icon-60x60.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="/SPA VUE Sitio/icono/icono_dietetica/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="/SPA VUE Sitio/icono/icono_dietetica/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/SPA VUE Sitio/icono/icono_dietetica/apple-touch-icon-152x152.png" />
+    <link rel="icon" type="image/png" href="/SPA VUE Sitio/icono/icono_dietetica/favicon-196x196.png" sizes="196x196" />
+    <link rel="icon" type="image/png" href="/SPA VUE Sitio/icono/icono_dietetica/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/png" href="/SPA VUE Sitio/icono/icono_dietetica/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="/SPA VUE Sitio/icono/icono_dietetica/favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="/SPA VUE Sitio/icono/icono_dietetica/favicon-128.png" sizes="128x128" />
+    <meta name="application-name" content="&nbsp;"/>
+    <meta name="msapplication-TileColor" content="#FFFFFF" />
+    <meta name="msapplication-TileImage" content="mstile-144x144.png" />
+    <meta name="msapplication-square70x70logo" content="mstile-70x70.png" />
+    <meta name="msapplication-square150x150logo" content="mstile-150x150.png" />
+    <meta name="msapplication-wide310x150logo" content="mstile-310x150.png" />
+    <meta name="msapplication-square310x310logo" content="mstile-310x310.png" />
+
+    <!-- fin icono de arriba -->
+
+    <!-- fuente del titulo -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,300;1,700&display=swap" rel="stylesheet">
+    <!-- fuente del titulo -->
+
+        <!-- icono menu -->
+                <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        <!-- icono menu -->
+
+
+
+        <!-- nuestro css -->
+                <link rel="stylesheet" href="style\style.css">
+        <!-- nuestro css -->
+
+</head>
+<body>
+    <div id="app">
+        <header class="header">
+            <h1 class="h1">Dietetica Gara</h1>
+            
+
+
+
+            <nav class="nav">
+
+                 <a class="img_menu1" @click="view = 'inicio' "><img  src="/SPA VUE Sitio/icono/icono_dietetica/apple-touch-icon-60x60.png" class="img_menu" alt=""></a>
+                 
+                 
+                 
+                 
+                 <ul class="menu" id="menu">
+                         <li><a @click="view = 'inicio' ">Inicio</a></li>
+                         <li><a @click="view = 'mieles'  ">Mieles</a></li>
+                         <li><a @click="view = 'contact'">Contacto</a></li>
+                         <li><a @click="view = 'about'">Nosostros</a></li>
+                         <li><a @click="view = 'location'">Sucursal</a></li>
+                         <li><a @click="view = 'registration'">Registrarse</a></li>
+                 </ul>
+
+
+
+                 <span id="boton" class="material-symbols-outlined">
+                        menu
+                        </span>
+                      
+            </nav>
+            
+            
+
+            <span class="btn_menu"> <i></i> </span>
+        </header>
+        <main>
+            <div class="container">
+                <component :is="view"></component>
+            </div>
+        </main>
+             <footer class="footer">
+                <a class="elemento_nav" href="https://www.twitter.com" target="_blank"><i class="fa fa-twitter"
+                        aria-hidden="true"></i></a>
+
+                <a class="elemento_nav" href="https://www.facebook.com/marcela.cerda.9" target="_blank"><i class="fa fa-facebook"
+                        aria-hidden="true"></i></a>
+
+                <a class="elemento_nav" href="https://www.pinterest" target="_blank"><i class="fa fa-pinterest"
+                        aria-hidden="true"></i></a>
+
+                <a class="elemento_nav" href="https://www.instagram.com/marcela.ines.cerda/" target="_blank"><i
+                        class="fa fa-instagram" aria-hidden="true"></i></a>
+
+                <a class="elemento_nav" href="https://www.linkedin.com/in/marcela-cerd%C3%A1-678b05196/" target="_blank"><i
+                        class="fa fa-linkedin" aria-hidden="true"></i></a>
+            </footer>
+        
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <script src="/SPA VUE Sitio/js/main.js"></script>
+</body>
+</html>

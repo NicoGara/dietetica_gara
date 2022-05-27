@@ -1,0 +1,304 @@
+/* propiedades de posicionamiento */
+/* propiedades del box model */
+/* propiedades de texto */
+/* propiedades visuales */
+/* el resto de propiedades */
+
+
+/* colores que me gustaron:  E0D8B0  FCFFE7  DEA057  CE9461 */
+
+*{
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+  background-color: #FCFFE7  ;
+}
+
+main{
+  position: relative;
+  top: 70px;
+}
+
+.header{
+/* propiedades de posicionamiento */
+position: fixed;
+/* propiedades del box model  */
+  width: 100%;
+  height: 70px;
+  padding: 0px;
+  margin: 0px;
+
+
+/* propiedades de texto */
+ 
+
+/* propiedades visuales */; 
+  color: black;
+  background-color: #E0D8B0;
+  box-shadow: 5px 0 10px rgb(0, 0, 0, 0.6);
+  /* border-bottom: 1px solid black; */
+}
+
+.h1{
+  /* propiedades de posicionamiento */
+  top: 0;
+/* propiedades del box model */
+padding: 0px;
+  margin: 0px;
+  height: 30px;
+/* propiedades de texto */
+font-size: 2rem;
+font-family: 'Cormorant Garamond', serif;
+font-weight: 700;
+text-align: center;
+/* propiedades visuales */
+background-color: transparent;
+
+/* el resto de propiedades */
+}
+
+.img_menu{
+  /* propiedades de posicionamiento */
+padding: 0 30px;
+margin-top: 5px;
+/* propiedades del box model */
+height: 60px;
+/* propiedades de texto */
+/* propiedades visuales */
+background-color: transparent;
+/* el resto de propiedades */
+cursor: pointer;
+}
+
+
+.nav{
+  /* propiedades de posicionamiento */
+  position: fixed;
+  right: 0%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  top: 0;
+/* propiedades del box model */
+height: 30px;
+width: 100%;
+padding: 0px;
+margin: 0px;
+/* propiedades de texto */
+/* propiedades visuales */
+background-color: transparent;
+/* el resto de propiedades */
+}
+
+.menu{
+  /* propiedades de posicionamiento */
+display: flex;
+position: relative;
+top: 25px;
+/* propiedades del box model */
+margin-right: 30px;
+/* propiedades de texto */
+
+/* propiedades visuales */
+background-color: transparent;
+/* el resto de propiedades */
+
+}
+
+.menu li{
+  /* propiedades de posicionamiento */
+  position: relative;
+/* propiedades del box model */
+margin: 0 10px;
+padding: 0;
+border-radius: 3px;
+/* propiedades de texto */
+
+/* propiedades visuales */
+background-color: transparent;
+/* el resto de propiedades */
+list-style: none;
+display: block;
+margin: 0 20px;
+}
+
+/* subrallado de los elemntos de navegacion */
+.menu li a::before{
+content: "";
+height: 3px;
+width: 0%;
+background-color: #CE9461;
+position: absolute;
+left: 0;
+bottom: 2px;
+transition: 0.4s ease-out;
+}
+.menu li a:hover::before{
+  width: 100%;
+}
+/* subrallado de los elemntos de navegacion */
+
+
+
+.menu li a{
+  /* propiedades de posicionamiento */
+/* propiedades del box model */
+padding: 7px 13px;
+
+/* propiedades de texto */
+text-decoration: none;
+/* propiedades visuales */
+background-color: transparent;
+/* el resto de propiedades */
+display: block;
+cursor: pointer;
+}
+
+.material-symbols-outlined {
+margin-right: 30px;
+font-size: 2.2rem;
+color: black;
+background-color: transparent;
+cursor: pointer;
+display: none;
+}
+
+.show{
+  top: 70px;
+  background-color:#E0D8B0;
+}
+
+@media screen and (max-width: 858px){
+  .material-symbols-outlined{
+    display: inline-flex;
+  }
+  
+  .img_menu{
+    padding: 0 10px;
+  }
+  .header{
+    text-align: center;
+    width: 100%;
+    position: fixed;
+    transition: all .4s;
+  }
+  .nav{
+    
+  }
+  .menu{
+    position: fixed;
+    width: 100vw;
+    flex-direction: column;
+    height: calc(100% - 70px);
+    top: -100vh;
+    text-align: center;
+    transition: all .4s;
+  }
+  
+  .show{
+    top: 70px;
+    background-color:#E0D8B0;
+  }
+}
+.show{
+  top: 70px;
+  background-color:#E0D8B0;
+}
+
+/* 
+.nav{
+  position: fixed;
+  width: 100%;
+  top: 20pxpx;
+  height: 45px;
+  
+  background-color:rgb(14, 224, 32);
+  color: black;
+  border-radius: 5px;
+  margin-left: 30% ;
+  padding: 0px;
+  text-decoration: none;
+  
+}
+.elemento_nav{
+  margin: 5px;
+  color:white;
+}
+
+.menu {
+  color: black;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 2vw;
+  width: auto;
+  height: 2rem;
+  
+  background-color: blue;
+  
+  font: inherit;
+  cursor: pointer;
+  margin: 5px;
+  padding: 0;
+  border: 0;
+}
+
+.img_menu1{
+  background-color:white;
+  box-shadow: none;
+}
+
+.img_menu{
+  margin: 0px;
+  height: 50px;
+  width: auto;
+  position: static;
+  left: 0px;
+}
+
+.formulario{
+  border-radius: 5px;
+  background-color:grey;
+  padding: 15px 25px;
+  margin: 15px 150px;
+}
+ img{
+  width: 60%;
+  margin:0% 10%;
+  padding:0% 10%;
+}  
+.footer{
+  background-color:black; 
+  text-align: center;  
+  color: white;
+  position: relative;
+  left: 0;
+  bottom: 0px;
+  width: 100%;
+  padding: 20px;
+  height: 70px;
+  font-size: 20px;
+  margin-top: 10px;
+} 
+*/
+
+
+/* prueba de subrallado */
+/* .primero{
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  margin: 0 auto;
+  width: 320px;
+}
+.segundo{
+  stroke-dasharray: 140 540;
+  stroke-dashoffset: -474;
+  stroke-width: 8px;
+  fill: transparent;
+  stroke: blue;
+  border-bottom: 5px solid black;
+  transition: stroke-width ls, stroke-dashoffset ls, stroke-dasharray ls;
+}
+.tercero */
