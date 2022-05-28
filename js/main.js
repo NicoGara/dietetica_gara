@@ -1,5 +1,6 @@
 
 
+
 //  con este codigo abrimos y cerramos la navegacion en celulares
 
 addEventListener("DOMContentLoaded", () => {
