@@ -136,14 +136,10 @@ const templates={
                     <td>{{elemento.precio}}</td>
                 </tr>
             </table>
-        </div>`,
-
-
-
-
+        </div>`
 }
 
-var app=new Vue({
+const app=new Vue({
     el:"#app",
     data: {
         view : 'inicio',
@@ -274,4 +270,4 @@ var app=new Vue({
             template: templates.delivery
         }
     }  
-})
+}) 
