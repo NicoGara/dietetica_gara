@@ -81,46 +81,90 @@ const templates={
             </table>
         </div>`,
     registration:`
-        <div id="registration" class="container active">
-            <div class="formulario">
-                <h2>Registrarse</h2>
-                <form action="show_data.html" target="_blank" >
-
-                    <label for="nombre">Nombre:</label>
-                    <input type="text" id="nombre" name="firstname" placeholder="Your name.."  ><br>
-                    <label for="apodo">Apodo:</label>
-                    <input type="text" id="apodo" name="nickname"  placeholder="Your nickname.." ><br>
-                    
-                    <label >Apellido:</label>
-                    <input type="text" id="apellido" name="lastname"  placeholder="Your lastname.."><br>
-            
-                    <label for="direccion">Direccion:</label>
-                    <input type="text" id="direccion" name="address"  placeholder="Your address.."><br>
-            
-                    <label for="contrasena">Contrasena:</label>
-                    <input type="password" name="password" ><br>
-            
-                    <label for="mail">E-mail:</label>
-                    <input type="email"  name="email" ><br>
-            
-                    <label for="Nacimiento">Fecha Nacimiento:</label>
-                    <input type="date" id="start" name="birthday"
-                    min="1900-01-01" max="2020-12-31">
-
-                    <label for="cel">Celular:</label>
-                    <input type="Celular"  name="celularl" ><br>
-            
-                    <p>Comentarios:</p>
-                    <textarea name="comentario"rows=""   ></textarea>
-        
-                    <input type="submit" value="Enviar">
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                </form> 
+    <form action="" class="formulario" id="formulario">
+            <div class="formulario_grupo" id="grupo_nombre">
+                <label for="nombre" class="formulario_label">Nombre y apellido</label>
+                <div class="formulario_grupo_input">
+                    <input type="text" class="formulario_input" name="nombre" id="nombre" placeholder="Horacio Perez">
+                    <i class="formulario_validacion material-symbols-outlined">
+                        close
+                        </i>
+                </div>
+                <p class="formulario_input_error">El nombre y apellido tiene que ser de 4 a 16 digitos y solo puede contener letras y espacios</p>
             </div>
-        </div>`,
+            <!-- Email -->
+               <div class="formulario_grupo" id="grupo_email">
+                   <label for="email" class="formulario_label">Email</label>
+                   <div class="formulario_grupo_input">
+                       <input type="email" class="formulario_input" name="email" id="email" placeholder="horacioperez@email.com">
+                       <i class="formulario_validacion material-symbols-outlined">
+                           close
+                           </i>
+                   </div>
+                   <p class="formulario_input_error">El Email solo puede contener letras, numeros, puntos y guion bajo</p>
+               </div>
+               <!-- Telefono -->
+               <div class="formulario_grupo" id="grupo_telefono">
+                   <label for="telefono" class="formulario_label">Telefono</label>
+                   <div class="formulario_grupo_input">
+                       <input type="tel" class="formulario_input" name="telefono" id="telefono" placeholder="1146578394">
+                       <i class="formulario_validacion material-symbols-outlined">
+                           close
+                           </i>
+                   </div>
+                   <p class="formulario_input_error">El telefono solo puede tener numeros y un maximo de 12 digitos</p>
+               </div>
+   
+   
+           <!-- contraseña -->
+               <div class="formulario_grupo" id="grupo_password">
+                   <label for="password" class="formulario_label">Contraseña</label>
+                   <div class="formulario_grupo_input">
+                       <input type="password" class="formulario_input" name="password" id="password">
+                       <i class="formulario_validacion material-symbols-outlined">
+                           close
+                           </i>
+                   </div>
+                   <p class="formulario_input_error">La contraseña debe ser de 4 a 12 digitos</p>
+               </div>
+   
+               
+           <!-- Confirmar contraseña -->
+           <div class="formulario_grupo" id="grupo_confirmar_password">
+               <label for="confirmar_password" class="formulario_label">Confirmar contraseña</label>
+               <div class="formulario_grupo_input">
+                   <input type="password" class="formulario_input" name="confirmar_password" id="confirmar_password">
+                   <i class="formulario_validacion material-symbols-outlined">
+                       close
+                       </i>
+               </div>
+               <p class="formulario_input_error">Las contraseñas tienen que ser iguales</p>
+           </div>
+   
+       <!-- condiciones -->
+           <div class="formulario_grupo formulario_grupo_terminos" id="formulario_terminos">
+               <label class="formulario_label">
+                   <input class="formulario_checkbox" type="checkbox" name="terminos" id="terminos">
+                   Acepto los terminos y condiciones
+               </label>
+           </div>
+   
+           <!-- mensaje de error -->
+           <div class="formulario_mensaje" id="formulario_mensaje">
+               <i class="formulario_p_boton material-symbols-outlined">
+                   error
+                   </i>
+                   <b>Error:</b> Por favor rellene el formulario correctamente.
+           </div>
+   
+           <!-- mensaje de confirmacion -->
+           <div class="formulario_grupo formulario_div_boton">
+               <button type="submit" class="formulario_boton">Enviar</button>
+               <p class="formulario_texto_exito" id="formulario_texto_exito">formulario enviado de manera correcta</p>
+           </div>
+    </form>
+
+            `,
     delivery:`
         <div id="delivery" class="container active">
             <h2>Delivery</h2>
@@ -271,3 +315,121 @@ const app=new Vue({
         }
     }  
 }) 
+
+// este codigo lo tuve que crear para que cuando aprete en registrarse arranque a validar, sino lo intentaba de validar siempre y marcaba error.
+document.querySelector(".registrarse").addEventListener("click",()=>{ 
+
+// este codigo lo tuve que crear para que cuando aprete en registrarse arranque a validar, sino lo intentaba de validar siempre y marcaba error.
+
+
+setTimeout(()=>{
+
+    const formulario = document.getElementById('formulario');
+    const inputs = document.querySelectorAll('#formulario input');
+
+const expresiones = {
+	nombre: /^[a-zA-ZÀ-ÿ\s]{1,40}$/,
+     // Letras y espacios, pueden llevar acentos.
+	password: /^.{4,12}$/, // 4 a 12 digitos.
+	email: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
+	telefono: /^\d{7,12}$/ // 7 a 14 numeros.
+}
+
+
+const campos = {
+	nombre: false,
+	password: false,
+	email: false,
+	telefono: false
+}
+
+const validarFormulario = (e) => {
+	switch (e.target.name) {
+		case "nombre":
+			validarCampo(expresiones.nombre, e.target, 'nombre');
+		break;
+        case "email":
+			validarCampo(expresiones.email, e.target, 'email');
+		break;
+		case "telefono":
+			validarCampo(expresiones.telefono, e.target, 'telefono');
+		break;
+		case "password":
+			validarCampo(expresiones.password, e.target, 'password');
+			validarPassword2();
+		break;
+		case "confirmar_password":
+			validarPassword2();
+		break;
+		
+	}
+}
+
+const validarCampo = (expresion, input, campo) => {
+	if(expresion.test(input.value)){
+		document.getElementById(`grupo_${campo}`).classList.remove('formulario_grupo-incorrecto');
+		document.getElementById(`grupo_${campo}`).classList.add('formulario_grupo-correcto');
+		document.querySelector(`#grupo_${campo} i`).textContent= "done";
+		document.querySelector(`#grupo_${campo} .formulario_input_error`).classList.remove('formulario_input_error-activo');
+		campos[campo] = true;
+	} else {
+		document.getElementById(`grupo_${campo}`).classList.add('formulario_grupo-incorrecto');
+		document.getElementById(`grupo_${campo}`).classList.remove('formulario_grupo-correcto');
+        document.querySelector(`#grupo_${campo} i`).textContent= "close";
+		document.querySelector(`#grupo_${campo} .formulario_input_error`).classList.add('formulario_input_error-activo');
+		campos[campo] = false;
+	}
+}
+
+const validarPassword2 = () => {
+	const inputPassword = document.getElementById('password');
+	const inputConfirmar_Password = document.getElementById('confirmar_password');
+
+	if(inputPassword.value !== inputConfirmar_Password.value){
+		document.getElementById(`grupo_confirmar_password`).classList.add('formulario_grupo-incorrecto');
+		document.getElementById(`grupo_confirmar_password`).classList.remove('formulario_grupo-correcto');
+        document.querySelector(`#grupo_confirmar_password i`).textContent= "close";
+		document.querySelector(`#grupo_confirmar_password .formulario_input_error`).classList.add('formulario_input_error-activo');
+		campos["password"] = false;
+	} else {
+		document.getElementById(`grupo_confirmar_password`).classList.remove('formulario_grupo-incorrecto');
+		document.getElementById(`grupo_confirmar_password`).classList.add('formulario_grupo-correcto');
+		document.querySelector(`#grupo_confirmar_password i`).textContent= "done";
+		document.querySelector(`#grupo_confirmar_password .formulario_input_error`).classList.remove('formulario_input_error-activo');
+		campos["password"] = true;
+	}
+}
+
+
+
+inputs.forEach((input) => {
+	input.addEventListener('keyup', validarFormulario);
+	input.addEventListener('blur', validarFormulario);
+});
+
+
+// validacion de campos:
+
+formulario.addEventListener('submit', (e) => {
+	e.preventDefault();
+
+	const terminos = document.getElementById('terminos');
+	if(campos.nombre && campos.password && campos.email && campos.telefono && terminos.checked ){
+		formulario.reset();
+
+		document.getElementById('formulario_texto_exito').classList.add('formulario_texto_exito-activo');
+		setTimeout(() => {
+			document.getElementById('formulario_texto_exito').classList.remove('formulario_texto_exito-activo');
+		}, 5000);
+
+		document.querySelectorAll('.formulario_grupo-correcto').forEach((icono) => {
+			icono.classList.remove('formulario_grupo-correcto');
+		});
+	} else {
+		document.getElementById('formulario_mensaje').classList.add('formulario_mensaje-activo');
+	}
+});
+
+}, 20 )
+
+})
