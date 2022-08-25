@@ -32,7 +32,7 @@ const templates={
         <div id="inicio" class="active">
             <h2>Productos:</h2>  
             <ul v-for="i in recetas">
-                <li>{{i.nombre}}
+                <li> <h3>{{i.nombre}}</h3>
                     <br><img v-bind:src="i.foto"><br>
                     <p>Detalles: {{i.detalles}}</p>
                     <p>Beneficios: {{i.beneficios}}</p>    
@@ -42,11 +42,20 @@ const templates={
 
     mieles:`
         <div id="mieles" class="mieles active">
-            <ul v-for="i in miel">
-            <li>{{i.tipoDeMiel}}
-            <br>
-                {{i.detalleDeMiel}}
-            </li>
+            <ul v-for="i in miel" class="mieles__ul">
+                <li class="mieles__ul-li"> 
+
+                    <div class="mieles__ul-li-div-1">
+                        <img v-bind:src="i.foto" class="mieles__ul-li-div-img">
+                        <h3 class="mieles__ul-li-div-h3 especial__mieles-h3"> {{i.tipoDeMiel}} </h3>
+                    </div>
+
+                    <div class="mieles__ul-li-div-2">
+                        <h3 class="mieles__ul-li-div-h3" > {{i.tipoDeMiel}} </h3>
+                        <p class="mieles__ul-li-div-p" > {{i.detalleDeMiel}} </p>
+                    </div>
+ 
+                 </li>
             </ul>
         </div>`,
     contact:`
@@ -224,25 +233,71 @@ const app=new Vue({
                 data:function() {
                     return{
                         miel:[{
-                            tipoDeMiel:"Miel de tilo",
-                            detalleDeMiel:"La miel de tilo es de color claro, casi transparente, y su sabor es bastante dulce."
+                            tipoDeMiel:"Atamisky",
+                            detalleDeMiel:"Miel de color intermedio, aroma penetrante y sabor intenso. Ubicacion: Monte Nativo noroeste Argentino ",
+                            foto:"imagenes/mieles/atamisky.jpg"
                             },
                             {
-                            tipoDeMiel:"Miel floral",
-                            detalleDeMiel:"También se la conoce como miel de prado o multifloral porque está hecha con el polen de diferentes especies de flores, según la zona en la que se encuentren las abejas y las colmenas. El aroma es fuerte y su sabor también."
+                            tipoDeMiel:"Algarrobo",
+                            detalleDeMiel:"La miel de Algarrobo se caracteriza por su sabor sumamente suave y su color claro, el cual al solidificar se torna totalmente blanca. Ubicacion: Monte nativo ",
+                            foto:"imagenes/mieles/algarrobo.jpg"
                             },
                             {
-                            tipoDeMiel:"Miel de acacia",
-                            detalleDeMiel:"La miel de acacia tiene un color bastante ligero y el sabor es dulce. No se recomienda en niños menores de un año. De lo contrario se podría generar una patología conocida como el botulismo del lactante. Así lo evidencia un artículo publicado en Lakartidningen."
+                            tipoDeMiel:"Chilca",
+                            detalleDeMiel:"Es una miel de color claro, aroma y sabor intenso. Presenta la particularidad de cristalizar rápidamente, puede contener un porcentaje un tanto mayor de humedad en su composición. Ubicacion: Centro norte de la provincia del Chaco (General San Martin) ",
+                            foto:"imagenes/mieles/chilca.jpg"
                             },
                             {
-                            tipoDeMiel:"Miel de alforfón",
-                            detalleDeMiel:"Este tipo de miel es la más oscura de todas y su sabor es un poco picante. A pesar de esto, sus propiedades son muy beneficiosas para la salud."
+                            tipoDeMiel:"Garabato",
+                            detalleDeMiel:"Esta miel proviene de la flor del garabato. Las abejas realizan una miel, a partir de esta flor, semioscura y liviana, ideal para endulzar infusiones y lácteos. ",
+                            foto:"imagenes/mieles/garabato.jpg"
                             },
                             {
-                            tipoDeMiel:"Miel de salvia",
-                            detalleDeMiel:"La miel de salvia suele ser amarilla con algún matiz verde. Los beneficios que reporta para nuestra salud son muy importantes."
+                            tipoDeMiel:"Jarilla",
+                            detalleDeMiel:"sus hojas tienen propiedades beneficiosas antioxidantes, antiinflamatorias, antimicrobianas e inmunomoduladoras, además de aportar vitaminas y minerales ",
+                            foto:"imagenes/mieles/jarilla.jpg"
+                            },
+                            {
+                            tipoDeMiel:"Juda",
+                            detalleDeMiel:"Es excelente en Hierro para las Anemias. ",
+                            foto:"imagenes/mieles/juda.jpg"
+                            },
+                            {
+                            tipoDeMiel:"Mistol",
+                            detalleDeMiel:"Son mieles de color claro (amarillas) de cristalización lenta.Presentan un sabor fuerte y aroma intenso. Ubicacion: Monte Nativo",
+                            foto:"imagenes/mieles/mistol.jpg"
+                            },
+                            {
+                            tipoDeMiel:"Multiflora",
+                            detalleDeMiel:"Este tipo de miel se produce con el néctar de diferentes flores de las cuales recolectan las abejas. Se caracteriza por tener un color y sabor más homogéneo. Es decir de un color ambar, y su aroma es mas neutral sin ninguna predominacia.",
+                            foto:"imagenes/mieles/multiflora.jpg"
+                            },
+                            {
+                            tipoDeMiel:"Palo amarillo",
+                            detalleDeMiel:"Regulador Hepático y Hormonal natural. Posee propiedades antioxidantes. Favorece la eliminación de toxinas del cuerpo ",
+                            foto:"imagenes/mieles/palo_amarillo.jpg"
+                            },
+                            {
+                            tipoDeMiel:"Poleo",
+                            detalleDeMiel:"Miel que presenta un color ámbar brillante, destacando por aroma y sabor muy intenso, de características marcadamente químicas y florales. Es una miel de cristalización media.",
+                            foto:"imagenes/mieles/poleo.jpg"
+                            },
+                            {
+                            tipoDeMiel:"Quebracho",
+                            detalleDeMiel:"Aroma floral-frutado, cálidas y frescas con un tono a regaliz gusto dulce, poco de astringencia. Consistencia líquida, cristalizan lentamente Color Ambar con tonalidades rojizas. Ubicacion: Oeste de la provincia de Formosa  ",
+                            foto:"imagenes/mieles/quebracho_blanco.jpg"
+                            },
+                            {
+                            tipoDeMiel:"Romero",
+                            detalleDeMiel:"Se trata de una miel de consistencia sólida. Tiene una cristalización variable dependiendo de las partículas de polen que la acompañen, aunque suele ser rápida, con cristales finos y angulosos. ",
+                            foto:"imagenes/mieles/romero.jpg"
+                            },
+                            {
+                            tipoDeMiel:"Tintitaco",
+                            detalleDeMiel:"Es Energizante natural. Favorece el correcto funcionamiento del Sistema Circulatorio.",
+                            foto:"imagenes/mieles/tintitaco.jpg"
                             }
+
                         ]
 
                     }

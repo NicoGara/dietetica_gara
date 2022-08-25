@@ -43,10 +43,14 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-        <!-- fuente del main y footer -->
+        <!-- fuente del texto -->
         <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,300;1,700&family=Roboto&display=swap" rel="stylesheet">
-         <!-- fuente del main y footer -->
-         
+         <!-- fuente del texto -->
+
+         <!-- fuente de titulos excepto el primero -->
+         <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,300;1,700&family=Open+Sans:ital,wght@1,300&family=Roboto&display=swap" rel="stylesheet">
+         <!-- fuente de titulos excepto el primero -->
+
          <!-- fuente del titulo -->
         <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,300;1,700&display=swap" rel="stylesheet">
         <!-- fuente del titulo -->
@@ -69,62 +73,53 @@
 <body>
     <div class="contenedor_body" id="app">
         <header class="header">
-            <h1 class="h1">Dietetica Gara</h1>
+                <h1 class="h1">Dietetica Gara</h1>
             
+                <img src="imagenes/mieles/" alt="">
 
 
+                <nav class="nav">
 
-            <nav class="nav">
-
-                 <a class="img_menu1" @click="view = 'inicio' "><img  src="icono/icono_dietetica/apple-touch-icon-60x60.png" class="img_menu" alt=""></a>
+                        <a class="img_menu1" @click="view = 'inicio' "><img  src="icono/icono_dietetica/apple-touch-icon-60x60.png" class="img_menu" alt=""></a>
                  
                  
                
                  
                  
-                 <ul class="menu" id="menu">
-                         <li><a @click="view = 'inicio' ">Inicio</a></li>
-                         <li><a @click="view = 'mieles'  ">Mieles</a></li>
-                         <li><a @click="view = 'contact'">Contacto</a></li>
-                         <li><a @click="view = 'about'">Nosostros</a></li>
-                         <li><a @click="view = 'location'">Sucursal</a></li>
-                         <li><a class="registrarse" @click="view = 'registration'">Registrarse</a></li>
-                 </ul>
+                        <ul class="menu" id="menu">
+                                <li><a @click="view = 'inicio' ">Inicio</a></li>
+                                <li><a @click="view = 'mieles'  ">Mieles</a></li>
+                                <li><a @click="view = 'contact'">Contacto</a></li>
+                                <li><a @click="view = 'about'">Nosostros</a></li>
+                                <li><a @click="view = 'location'">Sucursal</a></li>
+                                <li><a class="registrarse" @click="view = 'registration'">Registrarse</a></li>
+                        </ul>
 
 
 
-                 <span id="boton" class="material-symbols-outlined">
-                        menu
-                        </span>
+                        <span id="boton" class="material-symbols-outlined"> menu </span>
                       
-            </nav>
+                </nav>
             
             
 
-            <span class="btn_menu"> <i></i> </span>
+                <span class="btn_menu"> <i></i> </span>
         </header>
+
         <main>
             <div class="container">
                 <component :is="view"></component>
             </div>
         </main>
         <footer class="footer">
-                <a class="elemento_nav" href="https://www.twitter.com" target="_blank"><i class="fa fa-twitter"
-                        aria-hidden="true"></i></a>
 
-                <a class="elemento_nav" href="https://www.facebook.com/marcela.cerda.9" target="_blank"><i class="fa fa-facebook"
-                        aria-hidden="true"></i></a>
-
-                <a class="elemento_nav" href="https://www.pinterest" target="_blank"><i class="fa fa-pinterest"
-                        aria-hidden="true"></i></a>
-
-                <a class="elemento_nav" href="https://www.instagram.com/marcela.ines.cerda/" target="_blank"><i
+                <a class="elemento_nav" href="https://www.instagram.com/dieteticagara/?hl=es" target="_blank"><i
                         class="fa fa-instagram" aria-hidden="true"></i></a>
 
                 <a class="elemento_nav" href="https://www.linkedin.com/in/marcela-cerd%C3%A1-678b05196/" target="_blank"><i
                         class="fa fa-linkedin" aria-hidden="true"></i></a>
         </footer>
-        
+
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
 
