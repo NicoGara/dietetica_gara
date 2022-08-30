@@ -19,7 +19,14 @@
   background-color: #E0D8B0 ;
 } 
 
-.container{
+.mostrar{
+  display: block;
+}
+.noMostrar{
+  display: none;
+}
+
+div .container{
   padding: 0;
   position:relative;
   text-align: center;
@@ -29,7 +36,7 @@
 main{
   position: relative;
   top: 70px;
-  z-index: -10;
+  z-index: 0;
 
   width: 100%;
   padding: 0;
@@ -42,21 +49,19 @@ main{
 
 .contenedor_body{
   z-index: -200;
-  height: 0;
-  width: 100vw;
-  background-color: #0075ff;
-  z-index: 1;
+  height: 100%;
+  width: 100%;
 }
 
 .header{
 position: fixed;
+z-index: 1;
 
   width: 100%;
   height: 70px;
   padding: 0px;
   margin: 0px;
 
-  color: black;
   background-color: #E0D8B0;
   box-shadow: 5px 0 10px rgb(0, 0, 0, 0.6);
 }
@@ -113,6 +118,38 @@ margin: 0px;
 background-color: transparent;
 /* el resto de propiedades */
 }
+
+
+/* cambiar el tema de la pagina */
+
+.nav__theme{
+  position: absolute;
+  left: 120px;
+  top: 40px;
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
+.nav__theme:hover{
+  background-color: rgba(0, 0, 0, .2) ;
+  border-radius: 100px;
+  box-shadow: 0 0px 5px #000;
+  cursor: pointer;
+}
+
+.nav__theme-moon{
+  display: none;
+}
+.nav__theme-dark-sun{
+  display: none;
+}
+.nav__theme-dark-moon{
+  display: block;
+}
+
+/* cambiar el tema de la pagina */
 
 .menu{
   /* propiedades de posicionamiento */
@@ -175,10 +212,9 @@ display: block;
 cursor: pointer;
 }
 
-.material-symbols-outlined {
+.nav__menu {
 margin-right: 30px;
 font-size: 2.2rem;
-color: black;
 background-color: transparent;
 cursor: pointer;
 display: none;
@@ -377,10 +413,13 @@ transform: perspective(600px) rotateY(180deg);
 
 
 @media screen and (max-width: 858px){
-  .material-symbols-outlined{
+  .nav__menu{
     display: inline-flex;
   }
-  
+
+  .nav__theme{
+    left: 80px ;
+  }
   .img_menu{
     padding: 0 10px;
   }
@@ -418,6 +457,11 @@ transform: perspective(600px) rotateY(180deg);
     top: 70px;
     background-color:#E0D8B0;
     z-index: 10;
+  } 
+
+
+  .show-dark{
+    background-color: rgb(37, 37, 37);
   } 
 }
 /* modificacion del estilo segun tamaño de pantalla */
@@ -586,4 +630,21 @@ display: block;
   .formulario_boton{
       width: 100%;
   }
+}
+
+
+
+
+/* tema dark */
+
+.contenedor_body-dark{
+  color: white;
+}
+
+.header-dark{
+  background-color: rgb(37, 37, 37);
+}
+
+.main-dark{
+  background-color: rgb(68, 68, 68);
 }
