@@ -87,12 +87,15 @@ const templates={
 
     <div class="main__div-div">
             <div class="main__div-div-1">
+            
                     <h2>
                             Mieles
                     </h2>
+                    
                     <p>
                             Mieles traidas de cordoba, "mieles el arbol"
                     </p>
+                    
             </div>
             <div class="container__slider-otros-2" >
                     <div class="main__div-div-2-2" id="main__div-div-2-2">
@@ -295,17 +298,17 @@ const app=new Vue({
                     return{
                         miel:[{
                             tipoDeMiel:"Atamisky",
-                            detalleDeMiel:"Miel de color intermedio, aroma penetrante y sabor intenso. Ubicacion: Monte Nativo noroeste Argentino ",
+                            detalleDeMiel:"Miel de color intermedio, aroma penetrante y sabor intenso. ",
                             foto:"imagenes/mieles/atamisky.jpg"
                             },
                             {
                             tipoDeMiel:"Algarrobo",
-                            detalleDeMiel:"La miel de Algarrobo se caracteriza por su sabor sumamente suave y su color claro, el cual al solidificar se torna totalmente blanca. Ubicacion: Monte nativo ",
+                            detalleDeMiel:"La miel de Algarrobo se caracteriza por su sabor sumamente suave y su color claro, el cual al solidificar se torna totalmente blanca.",
                             foto:"imagenes/mieles/algarrobo.jpg"
                             },
                             {
                             tipoDeMiel:"Chilca",
-                            detalleDeMiel:"Es una miel de color claro, aroma y sabor intenso. Presenta la particularidad de cristalizar rápidamente, puede contener un porcentaje un tanto mayor de humedad en su composición. Ubicacion: Centro norte de la provincia del Chaco (General San Martin) ",
+                            detalleDeMiel:"Es una miel de color claro, aroma y sabor intenso. Presenta la particularidad de cristalizar rápidamente, puede contener un porcentaje un tanto mayor de humedad en su composición. ",
                             foto:"imagenes/mieles/chilca.jpg"
                             },
                             {
@@ -325,7 +328,7 @@ const app=new Vue({
                             },
                             {
                             tipoDeMiel:"Mistol",
-                            detalleDeMiel:"Son mieles de color claro (amarillas) de cristalización lenta.Presentan un sabor fuerte y aroma intenso. Ubicacion: Monte Nativo",
+                            detalleDeMiel:"Son mieles de color claro (amarillas) de cristalización lenta.Presentan un sabor fuerte y aroma intenso.",
                             foto:"imagenes/mieles/mistol.jpg"
                             },
                             {
@@ -345,7 +348,7 @@ const app=new Vue({
                             },
                             {
                             tipoDeMiel:"Quebracho",
-                            detalleDeMiel:"Aroma floral-frutado, cálidas y frescas con un tono a regaliz gusto dulce, poco de astringencia. Consistencia líquida, cristalizan lentamente Color Ambar con tonalidades rojizas. Ubicacion: Oeste de la provincia de Formosa  ",
+                            detalleDeMiel:"Aroma floral-frutado, cálidas y frescas con un tono a regaliz gusto dulce, poco de astringencia. Consistencia líquida, cristalizan lentamente Color Ambar con tonalidades rojizas. ",
                             foto:"imagenes/mieles/quebracho_blanco.jpg"
                             },
                             {

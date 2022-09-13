@@ -421,9 +421,60 @@ box-shadow: -10px 0 5px rgba(255, 255, 255, 0.5);
 }
 
 
+.div__mieles-panal{
+display: flex;
+flex-direction: row;
+flex-wrap: nowrap;
+}
+.div__mieles-panal a{
+  padding-right: 0;
+  margin-right: 0px;
+}
+.div__mieles-panal span{
+  display: relative;
+  padding-top: 8px;
+}
+
+.div__mieles-panal span:hover{
+  cursor: pointer;
+}
 
 
+.div__inicio-house{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  }
+  .div__inicio-house a{
+    padding-right: 0;
+    margin-right: 0px;
+  }
+  .div__inicio-house span{
+    display: relative;
+    padding-top: 8px;
+  }
+  
+  .div__inicio-house span:hover{
+    cursor: pointer;
+  }
 
+  .div__registrarse-lista{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    }
+    .div__registrarse-lista a{
+      padding-right: 0;
+      margin-right: 0px;
+    }
+    .div__registrarse-lista span{
+      display: relative;
+      padding-top: 8px;
+    }
+    
+    .div__registrarse-lista span:hover{
+      cursor: pointer;
+    }
 
 
 
@@ -636,10 +687,6 @@ transform: perspective(600px) rotateY(180deg);
     z-index: 10;
   } 
 
-  .main__div{
-  }
-  .main__div-div{
-  }
 
   .slider{
     height: 200px;

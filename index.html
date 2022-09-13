@@ -82,9 +82,25 @@
                         <a class="img_menu1" @click="view = 'inicio' "><img  src="icono/icono_dietetica/apple-touch-icon-60x60.png" class="img_menu" alt=""></a>
                  
                         <ul class="menu" id="menu">
-                                <li><a @click="view = 'inicio' ">Inicio</a></li>
-                                <li><a @click="view = 'mieles'  ">Mieles</a></li>
-                                <li><a class="registrarse" @click="view = 'registration'">Registrarse</a></li>
+                                <li>
+                                        <div class="div__inicio-house">
+                                                <a @click="view = 'inicio' ">Inicio</a>
+                                                <span @click="view = 'inicio' " class="material-symbols-outlined">home</span>
+                                        </div>         
+                                </li>
+                                <li>    
+                                        <div class="div__mieles-panal">
+                                                <a @click="view = 'mieles'">Mieles</a>
+                                                <span @click="view = 'mieles'" class="material-symbols-outlined">hive</span>
+                                        </div> 
+                                </li>
+                                <li>
+                                        <div class="div__registrarse-lista">
+                                                <a class="registrarse" @click="view = 'registration'">Registrarse</a>
+                                                <span @click="view = 'registration'" class="material-symbols-outlined">list_alt</span>
+                                        </div>
+                                                
+                                </li>
                         </ul>
 
                         <span id="nav__moon" class="nav__theme nav__theme-moon material-symbols-outlined"> dark_mode </span>
@@ -96,7 +112,7 @@
                         <span id="boton" class="nav__menu material-symbols-outlined"> menu </span>
                       
                 </nav>
-            
+                
             
 
                 <span class="btn_menu"> <i></i> </span>
