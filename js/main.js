@@ -26,16 +26,127 @@ addEventListener("DOMContentLoaded", () => {
 const templates={
     // dentro de ese "inicio" esta el HTML que aparece cuando seleccionamos inicio en la barra de navegacion
     inicio:`
-        <div id="inicio" class="active">
-            <h2>Productos:</h2>  
-            <ul v-for="i in recetas">
-                <li> <h3>{{i.nombre}}</h3>
-                    <br><img v-bind:src="i.foto"><br>
-                    <p>Detalles: {{i.detalles}}</p>
-                    <p>Beneficios: {{i.beneficios}}</p>    
-                </li>
-            </ul>
-        </div>`,
+    <div class="main__div">
+
+    <div class="container-slider">
+            <div class="slider" id="slider">
+
+                    <div class="slider__section">
+                            <img src="imagenes/Local/exterior_dia.jpg" alt="local exterior" class="slider__img">
+                    </div>
+            
+                    <div class="slider__section">
+                            <img src="imagenes/Local/interior1_dia.jpg" alt="local interior 1" class="slider__img">
+                    </div>
+                    <div class="slider__section">
+                            <img src="imagenes/Local/itenrior2_dia.jpg" alt="local interior 2" class="slider__img">
+                    </div>
+
+                    <div class="slider__section">
+                            <img src="imagenes/Local/interior3_dia.jpg" alt="local interior 3" class="slider__img">
+                    </div>
+            </div>
+                    <div class="slider__btn slider__btn--right" id="btn-right">&#62;</div>
+
+                    <div class="slider__btn slider__btn--left" id="btn-left">&#60;
+                    </div>
+    </div>
+    
+
+
+
+    <div class="main__div-div">
+            <div class="main__div-div-1">
+                    <h2>
+                            Frutos secos
+                    </h2>
+                    <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem culpa, facilis nobis sit numquam, impedit possimus suscipit dolor distinctio quaerat laborum ut omnis nemo odit accusamus, atque ex. Rerum, dicta?
+                    </p>
+            </div>
+            <div class="container__slider-otros" >
+                    <div class="main__div-div-2" id="main__div-div-2">
+                            <div class="div-2__slider">
+                                    <img src="imagenes/Local/interior3_dia.jpg" alt="local interior 3" class="slider__img-otros">
+                            </div>
+                            <div class="div-2__slider">
+                                    <img src="imagenes/Local/interior1_dia.jpg" alt="local interior 3" class="slider__img-otros">
+                            </div>
+                            <div class="div-2__slider">
+                                    <img src="imagenes/Local/itenrior2_dia.jpg" alt="local interior 3" class="slider__img-otros">
+                            </div>
+                            <div class="div-2__slider">
+                                    <img src="imagenes/Local/interior3_dia.jpg" alt="local interior 3" class="slider__img-otros">
+                            </div>
+                    </div>
+            </div>
+    </div>
+
+
+
+
+    <div class="main__div-div">
+            <div class="main__div-div-1">
+                    <h2>
+                            Mieles
+                    </h2>
+                    <p>
+                            Mieles traidas de cordoba, "mieles el arbol"
+                    </p>
+            </div>
+            <div class="container__slider-otros-2" >
+                    <div class="main__div-div-2-2" id="main__div-div-2-2">
+                            <div class="div-2__slider-2">
+                                    <img src="imagenes/mieles/algarrobo.jpg" alt="local interior 3" class="slider__img-otros-2">
+                            </div>
+                            <div class="div-2__slider-2">
+                                    <img src="imagenes/mieles/atamisky.jpg" alt="local interior 3" class="slider__img-otros-2">
+                            </div>
+                            <div class="div-2__slider-2">
+                                    <img src="imagenes/mieles/chilca.jpg" alt="local interior 3" class="slider__img-otros-2">
+                            </div>
+                            <div class="div-2__slider-2">
+                                    <img src="imagenes/mieles/garabato.jpg" alt="local interior 3" class="slider__img-otros-2">
+                            </div>
+                    </div>
+            </div>
+    </div>
+
+
+
+
+    <div class="main__div-div">
+            <div class="main__div-div-1">
+                    <h2>
+                            Frutos secos
+                    </h2>
+                    <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem culpa, facilis nobis sit numquam, impedit possimus suscipit dolor distinctio quaerat laborum ut omnis nemo odit accusamus, atque ex. Rerum, dicta?
+                    </p>
+            </div>
+            <div class="container__slider-otros-3" >
+                    <div class="main__div-div-2-3" id="main__div-div-2-3">
+                            <div class="div-2__slider-3">
+                                    <img src="imagenes/Local/interior3_dia.jpg" alt="local interior 3" class="slider__img-otros-3">
+                            </div>
+                            <div class="div-2__slider-3">
+                                    <img src="imagenes/Local/interior1_dia.jpg" alt="local interior 3" class="slider__img-otros-3">
+                            </div>
+                            <div class="div-2__slider-3">
+                                    <img src="imagenes/Local/itenrior2_dia.jpg" alt="local interior 3" class="slider__img-otros-3">
+                            </div>
+                            <div class="div-2__slider-3">
+                                    <img src="imagenes/Local/interior3_dia.jpg" alt="local interior 3" class="slider__img-otros-3">
+                            </div>
+                    </div>
+            </div>
+    </div>
+
+
+
+
+
+</div> `,
 
     mieles:`
         <div id="mieles" class="mieles active">
@@ -156,7 +267,7 @@ const app=new Vue({
                         {nombre:"Yerba Mate Kalena",
                         beneficios:"Actúa como un poderoso antioxidante, estimula el sistema nervioso de forma natural, aumenta la capacidad de concentración, mejora la resistencia a la fatiga física y mental, funciona como diurético y laxante suave.",
                         detalles:"Establecimiento San Demetrio es un emprendimiento familiar que desde el año 1977 produce Yerba Mate y Té Kalena. Elaboramos artesanalmente productos agroecológicos de noble sabor y excelente calidad, certificado libre de gluten y garantizando la particularidad de no producir acidez. Además, Yerba Mate Kalena permanece en el sistema tradicional de secado Barbacuá y estacionamiento natural por 12 meses, asegurando a los consumidores el verdadero sabor del mate. Además, desde el año 2001, producimos, fraccionamos y distribuimos Azúcar Mascabo BA-LA-JU.",
-                        // foto:"/dietetica_gara/imagenes/producto-1.jpg"        
+                        foto:"imagenes/local/exterior_dia.jpg"        
                         },
                         {nombre:"Te Inti Zen",
                         beneficios:"Cada taza de Inti Zen tiene atributos detoxificantes, relajantes, digestivas, energizante o revitalizantes. Su compromiso es crear infusiones ricas, que promuevan el bienestar y la salud.",
@@ -381,7 +492,7 @@ formulario.addEventListener('submit', (e) => {
 })
 
 
-//  con este codigo abrimos y cerramos la navegacion en celulares
+//  con este codigo cambiamos el tema a oscuro
 
 
 addEventListener("DOMContentLoaded", () => {
@@ -397,28 +508,142 @@ addEventListener("DOMContentLoaded", () => {
 
     const sun=document.getElementById("nav__sun")
 
+    const documento=document
+
+
 
     sun.addEventListener("click", () => {
-                body.classList.toggle("contenedor_body-dark")
-                header.classList.toggle("header-dark")
-                main.classList.toggle("main-dark")
-                footer.classList.toggle("header-dark")
-                menu.classList.toggle("show-dark")
                 sun.classList.toggle("nav__theme-dark-sun")
                 moon.classList.toggle("nav__theme-dark-moon")
+                document.documentElement.style.setProperty("--color-1", "rgb(37, 37, 37)");
+                document.documentElement.style.setProperty("--color-2", " rgb(68, 68, 68)");
+                document.documentElement.style.setProperty("--color-5", "white");
             }) 
 
     moon.addEventListener("click", () => {
-                body.classList.toggle("contenedor_body-dark")
-                header.classList.toggle("header-dark")
-                main.classList.toggle("main-dark")
-                footer.classList.toggle("header-dark")
-                menu.classList.toggle("show-dark")
                 sun.classList.toggle("nav__theme-dark-sun")
                 moon.classList.toggle("nav__theme-dark-moon")
+                document.documentElement.style.setProperty("--color-1", "#E0D8B0");
+                document.documentElement.style.setProperty("--color-2", "#FCFFE7");
+                document.documentElement.style.setProperty("--color-5", "black");
                 } ) 
                 
 })
 
-//  con este codigo abrimos y cerramos la navegacion en celulares
+//  con este codigo cambiamos el tema a oscuro
 
+
+
+
+
+// slider con el otro youtuber https://www.youtube.com/watch?v=WI0aCIEYXvw&t=61s&ab_channel=J%26GProyectosWeb
+
+
+const slider=document.getElementById("slider")
+let sliderSection = document.querySelectorAll(".slider__section")
+let sliderSectionLast = sliderSection[sliderSection.length -1]
+const btnLeft= document.getElementById("btn-left")
+const btnRight= document.getElementById("btn-right")
+
+slider.insertAdjacentElement("afterbegin", sliderSectionLast)
+const moverDerecha= ()=>{
+    let sliderSectionFirst=document.querySelectorAll(".slider__section")[0]
+    slider.style.marginLeft = "-200%"
+    slider.style.transition= "all 0.5s"
+    setTimeout(()=>{
+        slider.style.transition= "none"
+        slider.insertAdjacentElement("beforeend", sliderSectionFirst)
+        slider.style.marginLeft= "-100%"
+    },500);
+}
+const moverIzquierda= ()=>{
+    let sliderSection = document.querySelectorAll(".slider__section")
+let sliderSectionLast = sliderSection[sliderSection.length -1]
+    let sliderSectionFirst=document.querySelectorAll(".slider__section")[0]
+    slider.style.marginLeft = "0%"
+    slider.style.transition= "all 0.5s"
+    setTimeout(()=>{
+        slider.style.transition= "none"
+        slider.insertAdjacentElement("afterbegin", sliderSectionLast)
+        slider.style.marginLeft= "-100%"
+    },500);
+}
+btnRight.addEventListener("click",()=>{
+    moverDerecha()
+})
+btnLeft.addEventListener("click",()=>{
+    moverIzquierda()
+})
+setInterval(()=>{
+    moverDerecha()
+},5000)
+// slider con el otro youtuber
+
+const sliderOtros=document.getElementById("main__div-div-2")
+let sliderSectionOtros = document.querySelectorAll(".div-2__slider")
+let sliderSectionOtrosLast = sliderSectionOtros[sliderSectionOtros.length -1]
+
+
+sliderOtros.insertAdjacentElement("afterbegin", sliderSectionOtrosLast)
+
+const moverDerechaOtros= ()=>{
+    let sliderSectionOtrosFirst=document.querySelectorAll(".div-2__slider")[0]
+    sliderOtros.style.marginLeft = "-200%"
+    sliderOtros.style.transition= "all 0.5s"
+    setTimeout(()=>{
+        sliderOtros.style.transition= "none"
+        sliderOtros.insertAdjacentElement("beforeend", sliderSectionOtrosFirst)
+        sliderOtros.style.marginLeft= "-100%"
+    },500);
+}
+setInterval(()=>{
+    moverDerechaOtros()
+},5000)
+
+
+
+const sliderOtros_2=document.getElementById("main__div-div-2-2")
+let sliderSectionOtros_2 = document.querySelectorAll(".div-2__slider-2")
+let sliderSectionOtrosLast_2 = sliderSectionOtros_2[sliderSectionOtros_2.length -1]
+
+
+sliderOtros_2.insertAdjacentElement("afterbegin", sliderSectionOtrosLast_2)
+
+const moverDerechaOtros_2= ()=>{
+    let sliderSectionOtrosFirst_2=document.querySelectorAll(".div-2__slider-2")[0]
+    sliderOtros_2.style.marginLeft = "-200%"
+    sliderOtros_2.style.transition= "all 0.5s"
+    setTimeout(()=>{
+        sliderOtros_2.style.transition= "none"
+        sliderOtros_2.insertAdjacentElement("beforeend", sliderSectionOtrosFirst_2)
+        sliderOtros_2.style.marginLeft= "-100%"
+    },500);
+}
+setInterval(()=>{
+    moverDerechaOtros_2()
+},5000)
+
+
+
+
+
+const sliderOtros_3=document.getElementById("main__div-div-2-3")
+let sliderSectionOtros_3 = document.querySelectorAll(".div-2__slider-3")
+let sliderSectionOtrosLast_3 = sliderSectionOtros_3[sliderSectionOtros_3.length -1]
+
+
+sliderOtros_3.insertAdjacentElement("afterbegin", sliderSectionOtrosLast_3)
+
+const moverDerechaOtros_3= ()=>{
+    let sliderSectionOtrosFirst_3=document.querySelectorAll(".div-2__slider-3")[0]
+    sliderOtros_3.style.marginLeft = "-200%"
+    sliderOtros_3.style.transition= "all 0.5s"
+    setTimeout(()=>{
+        sliderOtros_3.style.transition= "none"
+        sliderOtros_3.insertAdjacentElement("beforeend", sliderSectionOtrosFirst_3)
+        sliderOtros_3.style.marginLeft= "-100%"
+    },500);
+}
+setInterval(()=>{
+    moverDerechaOtros_3()
+},5000)

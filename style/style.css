@@ -13,24 +13,30 @@
   outline: 0;
   box-sizing: border-box;
   list-style:none;
+  color: var(--color-5);
 }
 *::selection{
-  color:black;
+  color:var(--color-5);
   background-color: #E0D8B0 ;
 } 
 
-.mostrar{
-  display: block;
-}
-.noMostrar{
-  display: none;
+:root{
+  --slide-transform:0;
+  --transition: transform 1s;
+  --color-1: #E0D8B0;
+  --color-2: #FCFFE7;
+  --color-3: #DEA057;
+  --color-4: #CE9461;
+  --color-5: #000;
+  --height-slider:200px;
 }
 
-div .container{
+
+.container{
   padding: 0;
   position:relative;
-  text-align: center;
-  width: 100vw;
+  width: 100%;
+  min-width: 95vw;
 }
 
 main{
@@ -44,7 +50,7 @@ main{
    
   font-family: 'Open Sans', sans-serif;
 
-  background-color: #FCFFE7;
+  background-color: var(--color-2);
 }
 
 .contenedor_body{
@@ -62,7 +68,7 @@ z-index: 1;
   padding: 0px;
   margin: 0px;
 
-  background-color: #E0D8B0;
+  background-color: var(--color-1);
   box-shadow: 5px 0 10px rgb(0, 0, 0, 0.6);
 }
 
@@ -188,7 +194,7 @@ margin: 0 20px;
 content: "";
 height: 3px;
 width: 0%;
-background-color: #CE9461;
+background-color: var(--color-4);
 position: absolute;
 left: 0;
 bottom: 2px;
@@ -221,6 +227,14 @@ display: none;
 }
 
 
+.active__ul-li-img{
+  position: relative;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: -10;
+  border-radius: 30px;
+}
 
 
 .footer{
@@ -234,7 +248,7 @@ display: none;
 
   text-align: center;
   
-  background-color: #E0D8B0;
+  background-color: var(--color-1);
 }
 
 .footer .elemento_nav{
@@ -244,7 +258,166 @@ display: none;
   margin: 0;
   padding: 0;
 
-  color: black;
+  color: var(--color-5);
+}
+
+.main__div{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-top: 20px;
+  padding-bottom: 30px;
+}
+
+.main__div-div{
+  height: 200px;
+  border-radius: 30px;
+  padding: 20px;
+  overflow: hidden;
+  width: 90%;
+  align-content: center;
+  margin: auto;
+  background-color: var(--color-1);
+  display: flex;
+  gap: 30px;
+}
+
+.main__div-div-1{
+  width: 80%;
+}
+
+.container__slider-otros{
+  height: 100%;
+  overflow: hidden;
+  width: 20%;
+  position: relative;
+  border-radius: 30px;
+  margin: auto;
+}
+.main__div-div-2{
+  height: 100%;
+  margin-left: -100% ;
+width: 400%;
+display: flex;
+}
+.div-2__slider{
+  width: 100%;
+}
+.slider__img-otros{
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+
+.container__slider-otros-2{
+  height: 100%;
+  overflow: hidden;
+  width: 20%;
+  position: relative;
+  border-radius: 30px;
+  margin: auto;
+}
+.main__div-div-2-2{
+  height: 100%;
+  margin-left: -100% ;
+width: 400%;
+display: flex;
+}
+.div-2__slider-2{
+  width: 100%;
+}
+.slider__img-otros-2{
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+
+.container__slider-otros-3{
+  height: 100%;
+  overflow: hidden;
+  width: 20%;
+  position: relative;
+  border-radius: 30px;
+  margin: auto;
+}
+.main__div-div-2-3{
+  height: 100%;
+  margin-left: -100% ;
+width: 400%;
+display: flex;
+}
+.div-2__slider-3{
+  width: 100%;
+}
+.slider__img-otros-3{
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* slider de imagenes */
+.container-slider{
+width: 90%;
+max-width: 1200px;
+margin: auto;
+overflow: hidden;
+box-shadow: 0px 0px 20px #000;
+position: relative;
+border-radius: 40px;
+}
+.slider{
+height: 400px;
+margin-left: -100% ;
+
+/* esto tenemos que modificar si queremos poner mas imagenes, en este caso son 4 por eso 400 */
+width: 400%;
+/* esto tenemos que modificar si queremos poner mas imagenes, en este caso son 4 por eso 400 */
+
+display: flex;
+}
+.slider__section{
+width: 100%;
+}
+.slider__img{
+display: block;
+width: 100%;
+height: 100%;
+object-fit: cover;
+}
+.slider__btn{
+  position: absolute;
+  width: 40px;
+  height: 400px;
+  background: rgba(255, 255, 255, 0.5);
+  top: 0;
+  font-size: 30px;
+  font-weight: bold;
+  font-family: monospace;
+  text-align: center;
+  cursor: pointer;
+  padding-top: 180px;
+ 
+}
+.slider__btn:hover{
+background: rgba(255, 255, 255, 0.8);
+
+
+}
+
+.slider__btn--left{
+  box-shadow: 10px 0 5px rgba(255, 255, 255, 0.5);
+}
+
+.slider__btn--right{
+right: 0px;
+box-shadow: -10px 0 5px rgba(255, 255, 255, 0.5);
 }
 
 
@@ -255,6 +428,9 @@ display: none;
 
 
 
+
+
+/* slider de imagenes */
 
 
 
@@ -428,6 +604,7 @@ transform: perspective(600px) rotateY(180deg);
     width: 100%;
     position: fixed;
     transition: all .4s;
+    
   }
   .menu{
     position: fixed;
@@ -455,14 +632,46 @@ transform: perspective(600px) rotateY(180deg);
 
   .show{
     top: 70px;
-    background-color:#E0D8B0;
+    background-color:var(--color-1);
     z-index: 10;
   } 
 
+  .main__div{
+  }
+  .main__div-div{
+  }
 
-  .show-dark{
-    background-color: rgb(37, 37, 37);
-  } 
+  .slider{
+    height: 200px;
+  }
+  .slider__btn{
+    width: 20px;
+    height: 200px;
+    padding-top: 85px;
+  }
+  .main__div-div{
+    height: 130px;
+    padding: 10px;
+  }
+
+  .main__div-div-1{
+    width: 60%;
+  }
+
+  .main__div-div-1 h2{
+    font-size: 1.5em;
+  }
+  
+  .container__slider-otros{
+    width: 40%;
+  }
+  .container__slider-otros-2{
+    width: 40%;
+  }
+  .container__slider-otros-3{
+    width: 40%;
+  }
+
 }
 /* modificacion del estilo segun tamaño de pantalla */
 
@@ -633,18 +842,3 @@ display: block;
 }
 
 
-
-
-/* tema dark */
-
-.contenedor_body-dark{
-  color: white;
-}
-
-.header-dark{
-  background-color: rgb(37, 37, 37);
-}
-
-.main-dark{
-  background-color: rgb(68, 68, 68);
-}
