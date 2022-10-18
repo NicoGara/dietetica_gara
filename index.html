@@ -79,24 +79,24 @@
 
                 <nav class="nav">
 
-                        <a class="img_menu1" @click="view = 'inicio' "><img  src="icono/icono_dietetica/apple-touch-icon-60x60.png" class="img_menu" alt=""></a>
+                        <a class="img_menu1" id="iconoGaraInicio" @click="view = 'inicio' "><img  src="icono/icono_dietetica/apple-touch-icon-60x60.png" class="img_menu" alt=""></a>
                  
                         <ul class="menu" id="menu">
                                 <li>
                                         <div class="div__inicio-house">
-                                                <a @click="view = 'inicio' ">Inicio</a>
-                                                <span @click="view = 'inicio' " class="material-symbols-outlined">home</span>
+                                                <a @click="view = 'inicio' " id="inicioAtr">Inicio</a>
+                                                <span id="iconoInicio" @click="view = 'inicio' " class="material-symbols-outlined">home</span>
                                         </div>         
                                 </li>
                                 <li>    
                                         <div class="div__mieles-panal">
-                                                <a @click="view = 'mieles'">Mieles</a>
+                                                <a @click="view = 'mieles'" id="mielesAtr">Mieles</a>
                                                 <span @click="view = 'mieles'" class="material-symbols-outlined">hive</span>
                                         </div> 
                                 </li>
                                 <li>
                                         <div class="div__registrarse-lista">
-                                                <a class="registrarse" @click="view = 'registration'">Registrarse</a>
+                                                <a class="registrarse" @click="view = 'registration'" id="registrarseAtr">Registrarse</a>
                                                 <span @click="view = 'registration'" class="material-symbols-outlined">list_alt</span>
                                         </div>
                                                 
@@ -118,7 +118,7 @@
                 <span class="btn_menu"> <i></i> </span>
         </header>
 
-        <main class="main">
+        <main class="main" id="main">
    
         
             <div class="container">

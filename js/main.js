@@ -26,12 +26,12 @@ addEventListener("DOMContentLoaded", () => {
 const templates={
     // dentro de ese "inicio" esta el HTML que aparece cuando seleccionamos inicio en la barra de navegacion
     inicio:`
-    <div class="main__div">
+    <div class="main__div" id="main__div">
 
     <div class="container-slider">
             <div class="slider" id="slider">
 
-                    <div class="slider__section">
+                    <div class="slider__section" id="slider__section">
                             <img src="imagenes/Local/exterior_dia.jpg" alt="local exterior" class="slider__img">
                     </div>
             
@@ -539,114 +539,151 @@ addEventListener("DOMContentLoaded", () => {
 
 
 
+
+
+
+
+
+
+
+
+
+
 // slider con el otro youtuber https://www.youtube.com/watch?v=WI0aCIEYXvw&t=61s&ab_channel=J%26GProyectosWeb
 
 
-const slider=document.getElementById("slider")
-let sliderSection = document.querySelectorAll(".slider__section")
-let sliderSectionLast = sliderSection[sliderSection.length -1]
-const btnLeft= document.getElementById("btn-left")
-const btnRight= document.getElementById("btn-right")
 
-slider.insertAdjacentElement("afterbegin", sliderSectionLast)
-const moverDerecha= ()=>{
-    let sliderSectionFirst=document.querySelectorAll(".slider__section")[0]
-    slider.style.marginLeft = "-200%"
-    slider.style.transition= "all 0.5s"
-    setTimeout(()=>{
-        slider.style.transition= "none"
-        slider.insertAdjacentElement("beforeend", sliderSectionFirst)
-        slider.style.marginLeft= "-100%"
-    },500);
-}
-const moverIzquierda= ()=>{
+const problemaVue=()=>{
+    let slider=document.getElementById("slider")
     let sliderSection = document.querySelectorAll(".slider__section")
-let sliderSectionLast = sliderSection[sliderSection.length -1]
-    let sliderSectionFirst=document.querySelectorAll(".slider__section")[0]
-    slider.style.marginLeft = "0%"
-    slider.style.transition= "all 0.5s"
+    let sliderSectionLast = sliderSection[sliderSection.length -1]
+
+    let funcionSlider=(valorSlider,valorSliderSectionLast)=>{
+        valorSlider.insertAdjacentElement("afterbegin", valorSliderSectionLast)
+    }
+    const moverDerecha= (valorSlider,idSlider)=>{
+        let sliderSectionFirst=document.querySelectorAll(idSlider)[0]
+        if (valorSlider.style.marginLeft != "-200%") {
+            valorSlider.style.marginLeft = "-200%"
+        } 
+        if (valorSlider.style.transition != "all 0.5s") {
+            valorSlider.style.transition = "all 0.5s"
+        }
+    
+        // TENGO QUE LOGRAR ACOMODAR LA funcionSlider() CON ESTE CODIGO, ACA ESTA EL PROBLEMA
+        let intervalo= setTimeout(()=>{      
+            valorSlider.style.transition= "none"
+            valorSlider.insertAdjacentElement("beforeend", sliderSectionFirst)
+            valorSlider.style.marginLeft= "-100%"
+        },500);
+    }
+    const moverIzquierda= (valorSlider,idSlider)=>{
+        let sliderSection = document.querySelectorAll(idSlider)
+        let sliderSectionLast = sliderSection[sliderSection.length -1]
+        let sliderSectionFirst=document.querySelectorAll(idSlider)[0]
+        valorSlider.style.marginLeft = "0%"
+        valorSlider.style.transition= "all 0.5s"
+        setTimeout(()=>{
+            valorSlider.style.transition= "none"
+            valorSlider.insertAdjacentElement("afterbegin", sliderSectionLast)
+            valorSlider.style.marginLeft= "-100%"
+        },500);
+    }
+    const funcionParar= (slider,idSlider)=>{
+
+            const movimientoInterval= setInterval(()=>{
+                if (app.$children[0].$options._componentTag!=="inicio") {
+                    clearInterval(movimientoInterval)
+                }
+                if (app.$children[0].$options._componentTag=="inicio") {
+                    moverDerecha(slider,idSlider)
+                }
+                
+            },5000)
+    }
+
+    const btnLeft= document.getElementById("btn-left")
+    const btnRight= document.getElementById("btn-right")
+
+
+    funcionSlider(slider,sliderSectionLast)
+    btnRight.addEventListener("click",()=>{
+        moverDerecha(slider,".slider__section")
+    })
+    btnLeft.addEventListener("click",()=>{
+        moverIzquierda(slider,".slider__section")
+    })
+    funcionParar(slider,".slider__section")
+
+    // slider con el otro youtuber
+
+
+
+    let sliderOtros=document.getElementById("main__div-div-2")
+    let sliderSectionOtros = document.querySelectorAll(".div-2__slider")
+    let sliderSectionOtrosLast = sliderSectionOtros[sliderSectionOtros.length -1]
+
+
+
+    funcionSlider(sliderOtros,sliderSectionOtrosLast)
     setTimeout(()=>{
-        slider.style.transition= "none"
-        slider.insertAdjacentElement("afterbegin", sliderSectionLast)
-        slider.style.marginLeft= "-100%"
-    },500);
+        funcionParar(sliderOtros,".div-2__slider")
+    },250)
+
+
+
+
+
+
+    let sliderOtros_2=document.getElementById("main__div-div-2-2")
+    let sliderSectionOtros_2 = document.querySelectorAll(".div-2__slider-2")
+    let sliderSectionOtrosLast_2 = sliderSectionOtros_2[sliderSectionOtros_2.length -1]
+
+    funcionSlider(sliderOtros_2,sliderSectionOtrosLast_2)
+
+    setTimeout(()=>{
+            funcionParar(sliderOtros_2,".div-2__slider-2")
+    },500)
+
+
+
+    let sliderOtros_3=document.getElementById("main__div-div-2-3")
+    let sliderSectionOtros_3 = document.querySelectorAll(".div-2__slider-3")
+    let sliderSectionOtrosLast_3 = sliderSectionOtros_3[sliderSectionOtros_3.length -1]
+
+
+    funcionSlider(sliderOtros_3,sliderSectionOtrosLast_3)
+
+    setTimeout(()=>{
+           funcionParar(sliderOtros_3,".div-2__slider-3")
+    },750)
+
 }
-btnRight.addEventListener("click",()=>{
-    moverDerecha()
+
+
+
+
+// console.dir(app.$children[0].$options._componentTag);
+
+
+addEventListener("DOMContentLoaded",()=>{
+    if (app.$children[0].$options._componentTag=="inicio") {
+        problemaVue()
+    }
 })
-btnLeft.addEventListener("click",()=>{
-    moverIzquierda()
+
+
+const inicioAtr=document.getElementById("inicioAtr")
+inicioAtr.addEventListener("click",()=>{
+    location.reload()
 })
-setInterval(()=>{
-    moverDerecha()
-},5000)
-// slider con el otro youtuber
 
-const sliderOtros=document.getElementById("main__div-div-2")
-let sliderSectionOtros = document.querySelectorAll(".div-2__slider")
-let sliderSectionOtrosLast = sliderSectionOtros[sliderSectionOtros.length -1]
+const iconoGaraInicio=document.getElementById("iconoGaraInicio")
+iconoGaraInicio.addEventListener("click",()=>{
+    location.reload()
+})
 
-
-sliderOtros.insertAdjacentElement("afterbegin", sliderSectionOtrosLast)
-
-const moverDerechaOtros= ()=>{
-    let sliderSectionOtrosFirst=document.querySelectorAll(".div-2__slider")[0]
-    sliderOtros.style.marginLeft = "-200%"
-    sliderOtros.style.transition= "all 0.5s"
-    setTimeout(()=>{
-        sliderOtros.style.transition= "none"
-        sliderOtros.insertAdjacentElement("beforeend", sliderSectionOtrosFirst)
-        sliderOtros.style.marginLeft= "-100%"
-    },500);
-}
-setInterval(()=>{
-    moverDerechaOtros()
-},5000)
-
-
-
-const sliderOtros_2=document.getElementById("main__div-div-2-2")
-let sliderSectionOtros_2 = document.querySelectorAll(".div-2__slider-2")
-let sliderSectionOtrosLast_2 = sliderSectionOtros_2[sliderSectionOtros_2.length -1]
-
-
-sliderOtros_2.insertAdjacentElement("afterbegin", sliderSectionOtrosLast_2)
-
-const moverDerechaOtros_2= ()=>{
-    let sliderSectionOtrosFirst_2=document.querySelectorAll(".div-2__slider-2")[0]
-    sliderOtros_2.style.marginLeft = "-200%"
-    sliderOtros_2.style.transition= "all 0.5s"
-    setTimeout(()=>{
-        sliderOtros_2.style.transition= "none"
-        sliderOtros_2.insertAdjacentElement("beforeend", sliderSectionOtrosFirst_2)
-        sliderOtros_2.style.marginLeft= "-100%"
-    },500);
-}
-setInterval(()=>{
-    moverDerechaOtros_2()
-},5000)
-
-
-
-
-
-const sliderOtros_3=document.getElementById("main__div-div-2-3")
-let sliderSectionOtros_3 = document.querySelectorAll(".div-2__slider-3")
-let sliderSectionOtrosLast_3 = sliderSectionOtros_3[sliderSectionOtros_3.length -1]
-
-
-sliderOtros_3.insertAdjacentElement("afterbegin", sliderSectionOtrosLast_3)
-
-const moverDerechaOtros_3= ()=>{
-    let sliderSectionOtrosFirst_3=document.querySelectorAll(".div-2__slider-3")[0]
-    sliderOtros_3.style.marginLeft = "-200%"
-    sliderOtros_3.style.transition= "all 0.5s"
-    setTimeout(()=>{
-        sliderOtros_3.style.transition= "none"
-        sliderOtros_3.insertAdjacentElement("beforeend", sliderSectionOtrosFirst_3)
-        sliderOtros_3.style.marginLeft= "-100%"
-    },500);
-}
-setInterval(()=>{
-    moverDerechaOtros_3()
-},5000)
+const iconoInicio=document.getElementById("iconoInicio")
+iconoInicio.addEventListener("click",()=>{
+    location.reload()
+})
